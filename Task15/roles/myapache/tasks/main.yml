@@ -1,0 +1,16 @@
+---
+# tasks file for myapache
+
+- name: "installing httpd and php"
+  package:
+          name:
+                  - "{{ pack1 }}"
+                  - "{{ pack2 }}"
+- name: "starting httpd server"
+  service:
+          name: "{{ s1 }}"
+          state: started
+- name: "copying webserver file"
+  copy:
+          src: "index.php" 
+          dest: "/var/www/html/" 
