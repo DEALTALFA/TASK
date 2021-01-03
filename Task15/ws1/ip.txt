@@ -1,6 +1,0 @@
-[frontend]
-192.168.43.204 ansible_user=root ansible_ssh_pass=root 
-
-[backend]
-192.168.43.176 ansible_user=root ansible_ssh_pass=root
-192.168.43.134 ansible_root=root ansible_ssh_pass=root   
