@@ -1,0 +1,9 @@
+---
+# vars file for myloadbalancer
+
+pack1: "haproxy"
+
+
+
+
+service1: "haproxy"

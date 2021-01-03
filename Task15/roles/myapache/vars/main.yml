@@ -1,0 +1,10 @@
+---
+# vars file for myapache
+#
+
+pack1: "httpd"
+pack2: "php"
+
+#service for apache
+
+s1: "httpd"

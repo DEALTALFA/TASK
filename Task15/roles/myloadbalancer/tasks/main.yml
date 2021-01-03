@@ -1,0 +1,17 @@
+---
+# tasks file for myloadbalancer
+
+- package:
+        name:
+                - "{{ pack1 }}"
+
+- name: "starting haproxy service"
+  service:
+   name: "{{ service1 }}"  
+   state: started
+   enabled: yes 
+- template:
+        src: "haproxy.cfg"
+        dest: "/etc/haproxy/haproxy.cfg"
+  notify: restart LB
+    
