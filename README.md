@@ -1,7 +1,7 @@
 # TASK
 
 
-### ARTH - [TASK 10](https://github.com/DEALTALFA/TASK/tree/main/Task10)
+### ARTH - [Task 10](https://github.com/DEALTALFA/TASK/tree/main/Task10)
 
 
 🔰 Write an Ansible Playbook that does the
@@ -10,7 +10,7 @@ following operations in the managed nodes:
 * Start and enable Docker services
 * Pull the httpd server image from the Docker Hub
 * Run the docker container and expose it to the public
-* Copy the html code in /var/www/html directory
+* Copy the html code in `/var/www/html` directory
 and start the web server
 
 
