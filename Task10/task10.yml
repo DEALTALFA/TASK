@@ -1,0 +1,48 @@
+- hosts: cloud
+  tasks:
+  - name: Add repository of Docker
+    yum_repository:
+        name: "docker"
+        description: "docker YUM REPO"
+        baseurl: "https://download.docker.com/linux/centos/7/x86_64/stable"
+        gpgcheck: no
+  - name: installing python3.6
+    package:
+        name: "python3"
+        state: present
+
+  - name: Installing docker
+    package:
+        name: 
+        - "docker-ce-18.09.1-3.el7.x86_64"
+        - "containerd.io-1.2.0-3.el7.x86_64"
+        state: present
+  - pip:
+        name: "docker-py"
+
+  - name: Starting Docker service 
+    service:
+        name: "docker"
+        state: started
+        enabled: yes
+  - name: Pulling Docker Image
+    docker_image:
+        name: "httpd"
+        source: pull
+  - name: Making a directory in manage node
+    file:
+        path: "/root/ansible_MN"
+        state: directory
+  - name: Copying webpage to managed node directory
+    copy:
+        content: "Welcome to Docker Webpage"
+        dest: "/root/ansible_MN/docker.html"
+  - name: Creating  a  container in MN
+    docker_container:
+        name: "webserver"
+        image: "httpd"
+        volumes:
+        - "/root/ansible_MN:/usr/local/apache2/htdocs/"
+        ports:
+            - "8081:80"
+        state: started
