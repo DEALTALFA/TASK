@@ -20,4 +20,10 @@ and start the web server
 * We need to combine both of these roles controlling webserver versions  and solving challenge for host ip's  addition  dynamically over  each Managed Node  in  HAProxy.cfg file.
 
 
+### ARTH - [Task 17](https://github.com/DEALTALFA/TASK/tree/main/Task17/chat_server)
+:low_brightness: Create your own Chat Servers, and establish a network to transfer data using Socket Programing by creating both Server and Clinet machine as Sender and Receiver both. Do this program using UDP data transfer protocol.
 
+:low_brightness: Use multi-threading concept to get and receive data parallelly from both the Server Sides. Observe the challenges that you face to achieve this using UDP. 
+
+
+###ARTH - [Task 18]()
