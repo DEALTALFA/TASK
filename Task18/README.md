@@ -23,4 +23,5 @@ or use this in command line
 * `setenforce 0`
 5. Make the extracted folder writable
 * `chmod 777 <filename>`
-6. Now you can browse 
+7. Create a RD
+6. Now you can browse and give credential it prompt for to set 
