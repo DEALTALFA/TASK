@@ -8,8 +8,8 @@ or use this in command line
     `wget https://wordpress.org/latest.tar.gz`
 2.  Configure Repository for EPEL and REMI using root user  
 
-    * `yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm`  
-    * `sudo dnf -y install https://rpms.remirepo.net/enterprise/remi-release-8.rpm`
+    * `dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm`  
+    * `dnf -y install https://rpms.remirepo.net/enterprise/remi-release-8.rpm`
 3. Install software needed to run Wordpress
 
    | Software Name    |    Command |
