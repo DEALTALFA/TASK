@@ -26,10 +26,9 @@ and start the web server
 :low_brightness: Use multi-threading concept to get and receive data parallelly from both the Server Sides. Observe the challenges that you face to achieve this using UDP. 
 
 
-###ARTH - [Task 18](https://github.com/DEALTALFA/TASK/tree/main/Task18)
-ARTH - Task 18 :man_technologist_tone1:
+### ARTH - [Task 18](https://github.com/DEALTALFA/TASK/tree/main/Task18)
 
-Task Description:page_facing_up:
+🔰Task Description:page_facing_up:
 
 * Create an AWS EC2 instance 
 
