@@ -46,14 +46,14 @@ while 1:
     elif "1"== option:
         os.system("fdisk -l")
     elif "2" in option:
-        PVname=input("Enter the Disk name for physical Volume")
+        PVname=input("Enter the Disk name for physical Volume:")
         pasto(option,PVname)
     elif "3" in option:
-        VGgroup=input("Enter the Volume group Name")
+        VGgroup=input("Enter the Volume group Name:")
         vgcreate(VGgroup)
     elif "4" in option:
-    	Lvname=input("Enter the Logical Volume Name")
-    	disk_size=input("enter the size for your Logical Disk")
+    	Lvname=input("Enter the Logical Volume Name:")
+    	disk_size=input("enter the size for your Logical Disk:")
     	lvcreate(Lvname,disk_size)
     elif "5" in option:
     	os.system("pvdisplay")
