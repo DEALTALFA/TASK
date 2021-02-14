@@ -21,9 +21,8 @@ and start the web server
 
 
 ### ARTH - [Task 17](https://github.com/DEALTALFA/TASK/tree/main/Task17/chat_server)
-:low_brightness: Create your own Chat Servers, and establish a network to transfer data using Socket Programing by creating both Server and Clinet machine as Sender and Receiver both. Do this program using UDP data transfer protocol.
-
-:low_brightness: Use multi-threading concept to get and receive data parallelly from both the Server Sides. Observe the challenges that you face to achieve this using UDP. 
+* Create your own Chat Servers, and establish a network to transfer data using Socket Programing by creating both Server and Clinet machine as Sender and Receiver both. Do this program using UDP data transfer protocol.
+* Use multi-threading concept to get and receive data parallelly from both the Server Sides. Observe the challenges that you face to achieve this using UDP. 
 
 
 ### ARTH - [Task 18](https://github.com/DEALTALFA/TASK/tree/main/Task18)
@@ -39,4 +38,18 @@ and start the web server
 * As wordpress stores data at the backend in MySQL Database server. Therefore, you need to setup a MySQL server using AWS RDS service using Free Tier.
 
 * Provide the endpoint/connection string to the WordPress application to make it work.
+
+### ARTH - [Task 19](https://github.com/DEALTALFA/collection.kube8s)
+
+Task Description:page_facing_up:
+
+🔰 Ansible Role to Configure K8S Multi Node Cluster over AWS Cloud.
+* Create Ansible Playbook to launch 3 AWS EC2 Instance
+* Create Ansible Playbook to configure Docker over those instances.
+* Create Playbook to configure K8S Master, K8S Worker Nodes on the above created EC2 Instances using kubeadm.
+* Convert Playbook into roles and Upload those role on your Ansible Galaxy. 
+* Also Upload all the YAML code over your GitHub Repository.
+* Create a README.md document using markdown language describing your Task in creative manner. 
+* Create blog about task and share on your LinkedIN profile.
+
 
