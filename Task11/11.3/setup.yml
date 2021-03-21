@@ -1,0 +1,45 @@
+- hosts: apache
+  vars_prompt:
+          - name: doc_root
+            prompt: "Give ur DocumentRoot."
+            private: no
+          - name: port_no
+            prompt: "Enter the port"
+            private: no
+  tasks:
+          - name: install httpd
+            package:
+                    name: "httpd"
+                    state: present
+          - name: "create a Document root folder for apache"
+            file:
+                    state: directory
+                    path: "{{ doc_root  }}"
+          - name: "starting httpd"
+            service:
+                    name: "httpd"
+                    state: started
+          - name: "making change in apache configuration"
+            template:
+                    src: "my.conf" 
+                    dest: "/etc/httpd/conf.d/myhttpd.conf"
+            notify: restart httpd
+          - name: "creating a custom file"
+            copy:
+                    content: "This is different document root"
+                    dest: "{{ doc_root }}/index.html"
+          - name: "setting SELinux to permissive"
+            selinux:
+                    state: permissive
+                    policy: targeted
+          - name: "Adding a firewall to allow port"
+            firewalld:
+                    port: "{{ port_no }}/tcp"
+                    state: enabled
+                    permanent: no
+                    immediate: yes
+  handlers:
+          - name: restart httpd
+            service:
+                    name: "httpd"
+                    state: restarted
