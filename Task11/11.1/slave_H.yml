@@ -1,0 +1,48 @@
+- hosts: datanode
+  vars_files:
+          - var_H.yml          
+  tasks:
+  - name: "copying jdk s/w to DN"
+    copy:
+        src: "{{ jdk_loc }}"
+        dest: "/root"
+  - debug:
+          var: NN_ip
+  - name: "copying hadoop s/w to DN"
+    copy:
+        src: "{{ hadoop_loc }}"
+        dest: "/root"
+
+  - name: "installing jdk software on DN"
+    shell: "rpm -ivh /root/{{ jdk_software}} --force"
+    become: true
+
+  - name: "installing hadoop s/w on DN"
+    shell: "rpm -ivh /root/{{ hadoop_software }} --force"
+  - name: "creating DN folder"
+    file:
+        state: directory
+        path: "{{ DN_path }}"
+  
+  - name: "configuring hdfs-site.xml file in DN"
+    template:
+        dest: "/etc/hadoop/hdfs-site.xml"
+        src: "hdfs_slave.xml"
+  
+  - name: "configuring core-site.xml file in DN"
+    template:
+        dest: "/etc/hadoop/core-site.xml"
+        src: "core_slave.xml"
+  
+  - name: "disabling Firewall"
+    service:
+        name: "firewalld"
+        state: stopped
+        enabled: False
+  
+  - name: "disable SELinux"
+    ansible.posix.selinux:
+        state: disabled
+  
+  - name: "start hadoop datanode service"
+    shell: "hadoop-daemon.sh start datanode"

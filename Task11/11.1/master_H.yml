@@ -1,0 +1,46 @@
+- hosts: namenode
+  vars_files:
+          - var_H.yml
+  tasks:
+  - name: "copying jdk s/w to NN"
+    copy:
+        src: "{{ jdk_loc }}"
+        dest: "/root"
+  - name: "copying hadoop s/w to NN"
+    copy:
+        src: "{{ hadoop_loc }}"
+        dest: "/root"
+  - name: "installing jdk s/w on NN"
+    shell: "rpm -ivh /root/{{ jdk_software }} --force"
+    become: true  
+    ignore_errors: true
+
+  - name: "installing hadoop software on namenode"
+    shell: "rpm -ivh /root/{{ hadoop_software }} --force"
+    ignore_errors: true
+  - name: "creating folder for NN"
+    file: 
+        state: directory
+        path: "{{ NN_path }}"
+  - name: "configuring hdfs-site.xml file in NN"
+    template:
+        dest: "/etc/hadoop/hdfs-site.xml"
+        src: "hdfs_master.xml"
+  - name: "configuring core-site.xml file in NN"
+    template:
+        dest: "/etc/hadoop/core-site.xml"
+        src: "core_master.xml"
+  - name: "disabling firewall"
+    service:
+        name: "firewalld"
+        state: stopped
+        enabled: False
+  - name: "disable SELinux"
+    ansible.posix.selinux:
+        state: disabled
+  - name: "formating the NN folder"
+    shell: "echo Y | hadoop namenode -format"
+    become: true
+  - name: "start hadoop namenode service"
+    shell: "hadoop-daemon.sh start namenode"
+    
