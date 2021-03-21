@@ -14,6 +14,19 @@ following operations in the managed nodes:
 * Copy the html code in `/var/www/html` directory
 and start the web server
 
+ARTH - [Task 11](https://github.com/DEALTALFA/TASK/tree/main/Task11)
+----------------------
+🔰 11.1 Configure Hadoop and start cluster
+services using Ansible Playbook
+
+🔰 11.2 Create a Article, blog or Video on how 
+industries are solving challenges using Ansible.
+
+🔰 11.3  Restarting HTTPD Service is not
+idempotence in nature and also consume more
+resources suggest a way to rectify this challenge
+in Ansible playbook
+
 
  ARTH - [Task 15](https://github.com/DEALTALFA/TASK/tree/main/Task15)
 -----------------------------------------------------------------------
@@ -48,5 +61,7 @@ Task Description:page_facing_up:
 * Also Upload all the YAML code over your GitHub Repository.
 * Create a README.md document using markdown language describing your Task in creative manner. 
 * Create blog about task and share on your LinkedIN profile.
+
+
 
 
