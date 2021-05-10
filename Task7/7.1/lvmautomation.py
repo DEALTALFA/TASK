@@ -28,7 +28,7 @@ def mountpoint(v,n):
 def lvcreate(name,size):
     os.system("vgdisplay")
     vgname=input("Enter the Volume group:")
-    os.system(f"lvcreate --size {size}G --name {name} {vgname}")
+    os.system(f"lvcreate --size {size}G --name {name} {vgname}")     //size in GiB
     print("formating the Disk with ext4.....")
     os.system(f"mkfs.ext4 /dev/{vgname}/{name}")
     mountpoint(vgname,name) 
