@@ -10,4 +10,4 @@ COPY src/salary_pred.* .
 COPY src/salary.py .
 RUN yum install python3 -y && pip3 install joblib scikit-learn && \
         yum clean all
-CMD ["./salary_pred.py"]
+CMD ["python","./salary_pred.py"]
